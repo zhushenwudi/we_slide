@@ -434,15 +434,12 @@ class _WeSlideState extends State<WeSlide> with TickerProviderStateMixin {
   }
 
   double _getBodyHeight() {
-    var _size = widget.panelMinSize;
+    double _size = 0.0;
     /* If appbar is visible*/
     if (widget.appBar != null) _size += widget.appBarHeight;
 
     /* if no panelMinSize value*/
-    if (widget.panelMinSize == 0.0 && widget.footer != null) {
-      _size += widget.footerHeight;
-    }
-
+    if (widget.footer != null) _size += widget.footerHeight;
     return _size;
   }
 
